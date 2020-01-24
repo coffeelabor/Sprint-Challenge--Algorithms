@@ -5,7 +5,6 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 def count_th(word):
     word_length = len(word)
-    print('word length', word_length)
     # TBC
     if len(word) < 2:
         return 0
