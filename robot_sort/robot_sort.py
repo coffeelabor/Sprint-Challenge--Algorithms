@@ -103,11 +103,10 @@ class SortingRobot:
             self.compare_item() == 1:  # robots holding larger number
         """
         # Fill this out
-        # self.set_light_on()
         def send_robot_right():
             while self.can_move_right():
                 # robots holding smaller number or its holding None
-                if self.compare_item() == -1 or self.compare_item() ==None:
+                if self.compare_item() == -1 or self.compare_item() == None:
                     #it will always swap for a larger one
                     self.swap_item()
                     self.move_right()
@@ -137,7 +136,7 @@ class SortingRobot:
                 # print('about to move right in can move left')
                 # move_right()
                 # print('should have finished moving rightin move left')
-                
+
                 #it will always swap for a larger one
                 self.swap_item()
                 self.move_left()
@@ -160,13 +159,7 @@ class SortingRobot:
         print('item start', self._item)
         print('list', self._list)
         print('********ROBOT IS AT FAR LEFT********')
-
-
-           
-            
-
-
-
+    
             
             
 
@@ -515,3 +508,87 @@ self.set_light_on()
         print('********ROBOT IS AT FAR LEFT********')
 '''
 
+'''
+**********Final
+# self.set_light_on()
+        def send_robot_right():
+            while self.can_move_right():
+                # robots holding smaller number or its holding None
+                if self.compare_item() == -1 or self.compare_item() ==None:
+                    #it will always swap for a larger one
+                    self.swap_item()
+                    self.move_right()
+                    print('position rsmall', self._position)
+                    print('item rsmall', self._item)
+                    print('list rsmall', self._list)
+                # it has to be 1 so its holding a larger number
+                else:
+                    self.move_right()
+                    print('position rlarge', self._position)
+                    print('item rlarge', self._item)
+                    print('list rlarge', self._list)
+            #it should be holding a large number now and at the end so swap
+            self.swap_item()
+            print('********ROBOT IS AT FAR RIGHT********')
+            print('position end', self._position)
+            print('item end', self._item)
+            print('list', self._list)
+            print('********ROBOT IS AT FAR RIGHT********')
+        print('test')
+        send_robot_right()
+        print('test2')
+        while self.can_move_left():
+            # robots holding larger number or its holding None
+            if self.compare_item() == 1 or self.compare_item() == None:
+                print('robots holding larger number or its holding None')
+                # print('about to move right in can move left')
+                # move_right()
+                # print('should have finished moving rightin move left')
+                
+                #it will always swap for a larger one
+                self.swap_item()
+                self.move_left()
+                print('position llarge', self._position)
+                print('item llarge', self._item)
+                print('list llarge', self._list)
+            # it has to be 1 so its holding a smaller number
+            else:
+                print('about to move right in can move left')
+                send_robot_right()
+                print('should have finished moving rightin move left')
+                # self.move_left()
+                # print('position lsmall', self._position)
+                # print('item lsmall', self._item)
+                # print('list lsmall', self._list)
+        #it should be holding a small number now and at the start so swap
+        self.swap_item()
+        print('********ROBOT IS AT FAR LEFT********')
+        print('position start', self._position)
+        print('item start', self._item)
+        print('list', self._list)
+        print('********ROBOT IS AT FAR LEFT********')
+
+'''
+'''
+
+*****Clean
+def send_robot_right():
+            while self.can_move_right():
+                if self.compare_item() == -1 or self.compare_item() ==None:
+                    self.swap_item()
+                    self.move_right()
+                else:
+                    self.move_right()
+            self.swap_item()
+            
+        send_robot_right()
+        
+        while self.can_move_left():
+            
+            if self.compare_item() == 1 or self.compare_item() == None:
+                self.swap_item()
+                self.move_left()
+            else:
+                send_robot_right()
+        self.swap_item()
+'''
